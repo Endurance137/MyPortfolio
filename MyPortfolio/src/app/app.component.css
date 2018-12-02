@@ -1,0 +1,72 @@
+mat-drawer-container {
+  background-color: #212121;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+mat-drawer {
+  background-color: #212121;
+  width: 20%;
+  color: #FFECB3;
+  text-align: center;
+  padding-top: 80px;
+  vertical-align: middle;
+}
+
+mat-drawer-content {
+  background-color: white;
+}
+
+mat-drawer-container, mat-drawer, mat-drawer-content {
+  /* height: 100%;
+    min-height: 100%; */
+}
+
+.letter {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 2.6em;
+  margin: 0.2em;
+  position: relative;
+  color: #FF5252;
+  transform-style: preserve-3d;
+  perspective: 400;
+  z-index: 1;
+}
+
+.letter:before, .letter:after {
+  position: absolute;
+  content: attr(data-letter);
+  transform-origin: top left;
+  top: 0;
+  left: 0;
+}
+
+.letter, .letter:before, .letter:after {
+  transition: all 0.3s ease-in-out;
+}
+
+.letter:before {
+  color: #FFECB3;
+  text-shadow: -1px 0px 1px #212121, 1px 0px 1px rgba(0, 0, 0, .8);
+  z-index: 3;
+  transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+}
+
+.letter:after {
+  color: rgba(0, 0, 0, .11);
+  z-index: 2;
+  transform: scale(1.08, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 1deg);
+}
+
+.letter:hover:before {
+  color: #FFECB3;
+  transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+}
+
+.letter:hover:after {
+  transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg, 22deg);
+}

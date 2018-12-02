@@ -1,0 +1,21 @@
+<section class="timeline">
+  <ul>
+    <li #projectLoop *ngFor='let project of projects; let last = last;'>
+      <div class="projectContainer" style="padding-left: 30px;">
+        <a class="project-name" href="{{project.html_url}}">
+          <h3>{{project.name}}</h3>
+          <i class="material-icons links">
+            link
+          </i>
+        </a>
+        <p>Last Update On: {{project.updated_at | date: 'MMM d, y, h:mm:ss a'}}</p>
+        <p style="margin-bottom: 20px;">{{project.description || "No Description"}}</p>
+        <mat-chip-list>
+          <mat-chip *ngFor="let language of project.languages" selected color="accent">
+            {{language}}
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+    </li>
+  </ul>
+</section>
